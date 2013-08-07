@@ -1,9 +1,9 @@
-﻿#define F_CPU 8000000UL
+#define F_CPU 8000000UL
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
 #include "definitions.h"
-#include "indicator_debug.c"
+#include "indicator_debug.h"
 
 #define EVENT_MAG 0x1
 #define EVENT_BTN 0x2
@@ -132,7 +132,7 @@ int main(void) {
 
 	u32 old_metric_speed = metric_speed,
 		old_metric_len	 = metric_len;
-	PORTB = MYCONST;
+	//PORTB = MYCONST;
 	push_three_chars('h', 'e', 'l');
 	int i;
 	for (i = 0; i < 30; ++i) {

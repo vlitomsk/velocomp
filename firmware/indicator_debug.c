@@ -1,9 +1,9 @@
-#ifndef INDICATOR_DEBUG_H
-#define INDICATOR_DEBUG_H
+#ifndef INDICATOR_DEBUG_C
+#define INDICATOR_DEBUG_C
 
 #include <avr/io.h>
 #include <util/delay.h>
-#include "definitions.h"
+#include "indicator_debug.h"
 
 #define bit_on(bit_no) (CTLPORT |= (1 << bit_no))
 #define bit_off(bit_no) (CTLPORT &= ~(1 << bit_no))
