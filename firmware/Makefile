@@ -1,6 +1,6 @@
 CFLAGS = -Os -mmcu=atmega328p
 
-all: clean compile make_hex
+all: clean compile make_hex postbuild
 
 compile:
 	avr-gcc -c $(CFLAGS) indicator_debug.c -o indicator_debug.o 
@@ -9,6 +9,10 @@ compile:
 
 make_hex:
 	avr-objcopy -j .text -j .data -O ihex main.o velo.hex
+
+postbuild:
+	echo "Success"
+	du -b velo.hex
 
 clean:
 	rm *.o -f
